@@ -1,0 +1,68 @@
+[
+  {
+    "slug": "security",
+    "name": "Security",
+    "tagline": "How the internet stays private and trusted",
+    "description": "Protocols and standards for authentication, encryption, integrity, and privacy across all layers of the internet stack.",
+    "icon": "🔐",
+    "color": "from-red-900 to-red-700",
+    "funFact": "The TLS handshake that secures your browser happens in under 100ms, yet involves cryptographic operations that would take the world's fastest supercomputers centuries to break.",
+    "wgCount": 8,
+    "rfcCount": 263
+  },
+  {
+    "slug": "transport",
+    "name": "Transport",
+    "tagline": "Moving data reliably across networks",
+    "description": "Core transport protocols that handle reliable delivery, congestion control, and flow management between networked systems.",
+    "icon": "🚚",
+    "color": "from-blue-900 to-blue-700",
+    "funFact": "TCP was designed in 1973 and the core protocol (RFC 793) remained unchanged for 35 years before QUIC reimagined transport from the ground up.",
+    "wgCount": 5,
+    "rfcCount": 230
+  },
+  {
+    "slug": "applications",
+    "name": "Applications & Real-Time",
+    "tagline": "The protocols users actually interact with",
+    "description": "Application-layer protocols: HTTP, email, multimedia streaming, and real-time communication that power the visible web.",
+    "icon": "🌐",
+    "color": "from-emerald-900 to-emerald-700",
+    "funFact": "HTTP/1.1 (RFC 2616, 1999) was so dominant it took 16 years to supersede it with HTTP/2. HTTP/3 then arrived in just 5 years, riding on QUIC.",
+    "wgCount": 8,
+    "rfcCount": 169
+  },
+  {
+    "slug": "internet",
+    "name": "Internet",
+    "tagline": "IP addressing, routing, and the backbone",
+    "description": "Fundamental internet layer protocols: IP addressing schemes, routing protocols, and network management that hold the internet together.",
+    "icon": "🕸️",
+    "color": "from-purple-900 to-purple-700",
+    "funFact": "IPv4 was designed for 4.3 billion addresses — the IETF assumed the internet would never need more. IPv6 provides 340 undecillion addresses (3.4×10³⁸).",
+    "wgCount": 6,
+    "rfcCount": 375
+  },
+  {
+    "slug": "routing",
+    "name": "Routing",
+    "tagline": "Finding paths across the global internet",
+    "description": "Inter-domain and intra-domain routing protocols that determine how packets traverse the global network of networks.",
+    "icon": "🗺️",
+    "color": "from-amber-900 to-amber-700",
+    "funFact": "BGP (RFC 4271) is sometimes called 'the duct tape of the internet.' It was originally sketched on napkins at an IETF meeting in 1989.",
+    "wgCount": 6,
+    "rfcCount": 500
+  },
+  {
+    "slug": "ops-management",
+    "name": "Operations & Management",
+    "tagline": "Keeping the internet running smoothly",
+    "description": "Network management, monitoring, configuration, and operations standards that help administrators maintain reliable infrastructure.",
+    "icon": "⚙️",
+    "color": "from-slate-800 to-slate-600",
+    "funFact": "SNMP (Simple Network Management Protocol) was published in 1988 and is still running on millions of network devices today, despite being designed for a much simpler era.",
+    "wgCount": 4,
+    "rfcCount": 131
+  }
+]

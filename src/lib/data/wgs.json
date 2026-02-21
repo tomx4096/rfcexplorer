@@ -1,0 +1,372 @@
+[
+  {
+    "slug": "tls",
+    "name": "TLS",
+    "fullName": "Transport Layer Security",
+    "area": "security",
+    "description": "Standardizes and maintains protocols for establishing secure, authenticated communication channels over untrusted networks, ensuring confidentiality and integrity of data in transit.",
+    "summary": "The TLS working group evolved from the need to secure HTTP and other application protocols against eavesdropping and tampering as the web became a critical infrastructure. Created in the mid-1990s to formalize the SSL (Secure Sockets Layer) protocol, it has produced successive versions—TLS 1.0 through TLS 1.3—each addressing newly discovered cryptographic weaknesses and removing obsolete algorithms. Key milestones include the deprecation of RC4 and MD5, the elimination of renegotiation attacks, and the 2018 release of TLS 1.3, which reduced handshake latency and removed problematic features like static RSA key exchange. Today, with 60 RFCs, the group maintains the de facto security standard for virtually all encrypted internet traffic while managing ongoing concerns around post-quantum cryptography, certificate pinning, and privacy-preserving extensions like encrypted client hello.",
+    "rfcCount": 60,
+    "keyRfcs": []
+  },
+  {
+    "slug": "oauth",
+    "name": "OAuth",
+    "fullName": "Web Authorization Protocol",
+    "area": "security",
+    "description": "Standardizes protocols and mechanisms for secure authorization and delegation of access to protected resources on the internet, enabling users to grant third-party applications permission to access their data without sharing passwords.",
+    "summary": "The OAuth working group was established to address the security risks and usability problems inherent in the early 2000s practice of users sharing their passwords directly with third-party applications. The group produced OAuth 1.0 as a solution to enable delegated authorization, followed by the more widely adopted OAuth 2.0 (RFC 6749), which simplified the protocol for modern web and mobile architectures by introducing bearer tokens and multiple authorization flows suited to different application types. Since OAuth 2.0's publication, the working group has focused on extending and hardening the core protocol through security-focused RFCs including token introspection, token revocation, proof-key exchange (PKCE) for mobile clients, and device flow authorization. Today, with 33 RFCs published, the group continues to evolve OAuth to address emerging threats such as token substitution attacks, support new deployment scenarios like cross-device flows and pushed authorization requests, and maintain compatibility with related authorization standards like OpenID Connect.",
+    "rfcCount": 33,
+    "keyRfcs": []
+  },
+  {
+    "slug": "jose",
+    "name": "JOSE",
+    "fullName": "JavaScript Object Signing and Encryption",
+    "area": "security",
+    "description": "Standardizes cryptographic mechanisms and serialization formats for digitally signing and encrypting JSON data across web and internet applications.",
+    "summary": "The JOSE working group was established to address the growing need for a standardized, JSON-native approach to security in modern web services and APIs, as XML-based security standards (like XMLDsig and XMLEnc) were poorly suited for lightweight, REST-based architectures. The group produced foundational RFCs including JWS (JSON Web Signature), JWE (JSON Web Encryption), JWK (JSON Web Key), and JWT (JSON Web Token), which collectively enable developers to cryptographically protect JSON payloads without external processing or complex frameworks. These standards became critical infrastructure for OAuth 2.0, OpenID Connect, and countless microservice architectures, solving interoperability challenges while remaining accessible to developers. Today, JOSE specifications are widely deployed across identity management, API security, and zero-trust security models, with the working group maintaining these standards and addressing emerging use cases and cryptographic best practices.",
+    "rfcCount": 11,
+    "keyRfcs": []
+  },
+  {
+    "slug": "acme",
+    "name": "ACME",
+    "fullName": "Automated Certificate Management Environment",
+    "area": "security",
+    "description": "Standardizes automated protocols and procedures for the issuance, renewal, and revocation of digital certificates at scale across the internet.",
+    "summary": "The ACME working group was established to address the operational and security challenges of manual certificate management, which had become a significant bottleneck for deploying HTTPS and other TLS-based services. The group built upon the ACME protocol originally developed by Let's Encrypt, formalizing it into RFC 8555 as the foundational standard that enables Certificate Authorities and clients to automate certificate lifecycle management through standardized challenge-response mechanisms. Key milestones include the publication of core protocol specifications, profiles for different certificate types (such as star certificates for CDNs), and extensions supporting advanced validation scenarios. Today, ACME has become the de facto standard for certificate automation, powering widespread HTTPS adoption and enabling zero-touch certificate operations across millions of domains and devices globally.",
+    "rfcCount": 13,
+    "keyRfcs": []
+  },
+  {
+    "slug": "sasl",
+    "name": "SASL",
+    "fullName": "Simple Authentication and Security Layer",
+    "area": "security",
+    "description": "Standardizes authentication and security mechanisms that enable applications to negotiate secure credentials and establish protected communication channels across diverse network protocols.",
+    "summary": "The SASL working group was established to address the fragmentation of authentication approaches across Internet protocols, where each application protocol (SMTP, IMAP, POP3, etc.) implemented its own security mechanisms. By defining a unified framework, SASL abstracted authentication logic into pluggable mechanisms—such as PLAIN, LOGIN, CRAM-MD5, and SCRAM—allowing protocols to support multiple credential types without protocol-specific modifications. Early RFCs established the SASL model and core mechanisms; subsequent work introduced stronger alternatives like SCRAM to replace weaker digest-based schemes and extended support for modern authentication methods including OAuth2 integration. Today, SASL remains foundational to email, directory services, and messaging protocols, with the working group maintaining mechanism registries and evolving standards to address contemporary security threats and deployment practices.",
+    "rfcCount": 7,
+    "keyRfcs": []
+  },
+  {
+    "slug": "pkix",
+    "name": "PKIX",
+    "fullName": "Public-Key Infrastructure (X.509)",
+    "area": "security",
+    "description": "Standardizes the X.509 public-key infrastructure framework for certificate-based authentication, digital signatures, and secure communication across the Internet.",
+    "summary": "The PKIX working group was established in the mid-1990s to adapt the ITU-T X.509 standard for Internet use, addressing the need for interoperable public-key cryptography standards as e-commerce and secure communications became critical. Early work produced foundational RFCs including RFC 2459 (X.509 v3 certificates) and RFC 2560 (Online Certificate Status Protocol), which enabled practical deployment of certificate-based security across diverse systems. The group has continuously evolved these standards to address emerging threats and operational challenges, including certificate transparency mechanisms, automated renewal protocols (ACME), and enhanced validation procedures. Today, PKIX remains essential to modern Internet security, underpinning HTTPS, email encryption, code signing, and enterprise authentication systems used globally.",
+    "rfcCount": 70,
+    "keyRfcs": []
+  },
+  {
+    "slug": "curdle",
+    "name": "CURDLE",
+    "fullName": "CURves, Deprecating and a Little more Encryption",
+    "area": "security",
+    "description": "Standardizes cryptographic algorithms and practices for internet security by deprecating outdated curves and encryption methods while advancing modern alternatives.",
+    "summary": "The CURDLE working group was established to address the cryptographic landscape's evolution, particularly the need to deprecate weak elliptic curves and legacy encryption schemes that had become vulnerable to advances in cryptanalysis and computing power. As internet protocols accumulated support for numerous cryptographic primitives over decades, many became outdated or showed security weaknesses, yet remained in standards creating interoperability and security challenges. CURDLE focused on systematically identifying which curves and algorithms should be removed or discouraged across IETF protocols, producing guidance documents and protocol updates that helped the internet community transition to stronger alternatives like Curve25519 and ChaCha20. Through 16 RFCs, the group has established best practices for cryptographic algorithm selection, updated core protocols including TLS and DNS, and provided a framework for future cryptographic deprecation decisions.",
+    "rfcCount": 16,
+    "keyRfcs": []
+  },
+  {
+    "slug": "lamps",
+    "name": "LAMPS",
+    "fullName": "Limited Additional Mechanisms for PKIX and SMIME",
+    "area": "security",
+    "description": "Standardizes cryptographic mechanisms, algorithms, and protocols for public key infrastructure (PKI) and secure email (S/MIME) to address emerging security requirements and deprecated algorithms.",
+    "summary": "The LAMPS working group was established to maintain and enhance the PKIX (Internet X.509 Public Key Infrastructure) and S/MIME (Secure/Multipurpose Internet Mail Extensions) standards as cryptographic threats evolved and new security needs emerged. Created as a successor to earlier PKIX efforts, LAMPS addressed critical gaps by standardizing modern algorithms (such as SHA-256 and elliptic curve cryptography), deprecating weak mechanisms, and extending certificate and signing capabilities to support contemporary threat models. Key milestones include integrating post-quantum cryptography preparation, enhancing certificate transparency integration, and updating email security protocols for modern usage patterns. Today, with 53 RFCs published, LAMPS continues to be the primary standards body ensuring that PKI and S/MIME technologies remain secure, interoperable, and relevant to modern internet infrastructure and secure communications.",
+    "rfcCount": 53,
+    "keyRfcs": []
+  },
+  {
+    "slug": "quic",
+    "name": "QUIC",
+    "fullName": "QUIC Protocol",
+    "area": "transport",
+    "description": "Standardizes QUIC, a modern transport layer protocol that enables faster, more reliable, and more secure connections by multiplexing streams over UDP while reducing latency through 0-RTT resumption and improved congestion control.",
+    "summary": "The QUIC working group was established to address fundamental limitations in TCP and TLS that constrain performance for modern internet applications, particularly those requiring low-latency interactions and frequent connection establishment. Originally developed by Google as an experimental protocol (gQUIC), QUIC was brought into the IETF standards process to create an open, interoperable version that combines transport and cryptographic functionality into a single protocol. The group produced RFC 9000 (QUIC core specification) and related standards covering connection migration, HTTP/3 integration, datagram support, and various extensions, establishing QUIC as a production-ready alternative to TCP for many use cases. Today, QUIC is widely deployed across major content delivery networks and web services, with the working group continuing to maintain the protocol and develop extensions addressing evolving internet requirements.",
+    "rfcCount": 12,
+    "keyRfcs": []
+  },
+  {
+    "slug": "tcpm",
+    "name": "TCPM",
+    "fullName": "TCP Maintenance and Minor Extensions",
+    "area": "transport",
+    "description": "Maintains and evolves the TCP protocol through incremental improvements, bug fixes, and minor extensions that enhance performance, security, and robustness without fundamentally restructuring the protocol.",
+    "summary": "The TCPM working group was established to manage the ongoing maintenance and refinement of TCP, the foundational protocol for reliable data delivery on the internet. As TCP matured after decades of deployment, the group addressed emerging issues like spurious retransmissions, congestion control refinements, and security vulnerabilities while preserving backward compatibility with billions of existing implementations. Key milestones include standardizing TCP authentication options, improving fast recovery algorithms, and enhancing handling of edge cases discovered through operational experience. Today, TCPM continues to serve as the steward of TCP evolution, publishing approximately 48 RFCs that collectively represent the accumulated knowledge of how to make TCP work better in modern networks facing challenges like mobile connectivity, middlebox interference, and new threat models.",
+    "rfcCount": 48,
+    "keyRfcs": []
+  },
+  {
+    "slug": "tsvwg",
+    "name": "TSVWG",
+    "fullName": "Transport & Services",
+    "area": "transport",
+    "description": "Standardizes transport protocols, congestion control mechanisms, and quality-of-service technologies that enable reliable and efficient data delivery across IP networks.",
+    "summary": "The TSVWG (Transport Area Working Group) was established to address the growing complexity of transport-layer services beyond basic TCP/IP, particularly as the internet faced congestion challenges and the need for diverse service guarantees. The group has historically focused on congestion control algorithms, multicast protocols, SCTP (Stream Control Transmission Protocol), and QoS frameworks like Differentiated Services, evolving to meet demands from multimedia applications, real-time communications, and modern datacenter environments. Key milestones include the standardization of SCTP as an alternative to TCP/UDP, development of congestion control variants (CUBIC, BBR foundations), and maintenance of foundational RFCs on DCCP and MPLS traffic engineering. Today, the working group continues to refine transport mechanisms for emerging challenges including high-speed networks, low-latency applications, and integration with newer technologies like QUIC's transport features.",
+    "rfcCount": 90,
+    "keyRfcs": []
+  },
+  {
+    "slug": "ippm",
+    "name": "IPPM",
+    "fullName": "IP Performance Measurement",
+    "area": "transport",
+    "description": "Defines standardized metrics and methodologies for measuring IP network performance characteristics such as latency, packet loss, and jitter across diverse network conditions.",
+    "summary": "The IPPM working group was established in the late 1990s to address the lack of consistent, reproducible methods for quantifying IP network performance—a critical need as networks became essential for voice, video, and real-time applications. Early work focused on establishing formal definitions for metrics like one-way delay and packet loss that could be measured reliably despite clock synchronization challenges and the inherent variability of Internet paths. Key milestones include RFC 2679 (one-way delay metrics), RFC 2680 (packet loss), and the development of frameworks for statistical analysis of measurements. Today, with 70 RFCs published, the group maintains an extensive library of performance metrics relevant to modern challenges including IPv6, multicast, tunneling, and application-layer performance, serving as the authoritative reference for network operators, equipment manufacturers, and service providers conducting meaningful performance assessments.",
+    "rfcCount": 70,
+    "keyRfcs": []
+  },
+  {
+    "slug": "rmcat",
+    "name": "RMCAT",
+    "fullName": "RTP Media Congestion Avoidance Techniques",
+    "area": "transport",
+    "description": "Standardizes congestion control algorithms and techniques for real-time media transport over IP networks to ensure quality of service while maintaining network stability.",
+    "summary": "The RMCAT working group was established to address the challenge of delivering high-quality real-time communications (voice, video, screen sharing) over the internet without degrading network performance for other users. As RTP-based applications proliferated, the lack of standardized congestion avoidance mechanisms led to poor interoperability and potential network congestion collapse. The group developed a comprehensive suite of standards including congestion control algorithms (such as NADA, SCReAM, and TWCC-based approaches), evaluation criteria, and guidelines that enable media endpoints to adapt their transmission rates dynamically in response to network conditions. With 10 published RFCs, RMCAT has become foundational to modern WebRTC implementations and other real-time communication systems, ensuring that interactive media applications can coexist responsibly on shared networks.",
+    "rfcCount": 10,
+    "keyRfcs": []
+  },
+  {
+    "slug": "httpbis",
+    "name": "HTTPbis",
+    "fullName": "HTTP Bis (Revised)",
+    "area": "applications",
+    "description": "Standardizes and maintains the HTTP protocol specifications, including semantics, caching, authentication, and related technologies that form the foundation of modern web communication.",
+    "summary": "The HTTPbis working group was established to modernize HTTP/1.1, which had accumulated editorial issues and inconsistencies across its original RFC 2616 specification. The group undertook a comprehensive revision effort starting in the late 2000s, producing a clearer, more maintainable set of specifications that separated HTTP semantics from transport-specific details. Key milestones include the publication of HTTP/1.1 revisions (RFC 7230-7235), the development of HTTP/2 (RFC 7540) to address performance limitations through multiplexing and header compression, and HTTP/3 (RFC 9110-9114) leveraging QUIC for improved reliability and speed. Today, the working group continues to maintain these specifications, publish errata, and develop extensions that address evolving web requirements while ensuring backward compatibility across the diverse ecosystem of HTTP implementations.",
+    "rfcCount": 54,
+    "keyRfcs": []
+  },
+  {
+    "slug": "httpauth",
+    "name": "HTTP Auth",
+    "fullName": "HTTP Authentication",
+    "area": "applications",
+    "description": "Standardizes authentication mechanisms and frameworks for HTTP clients and servers to securely establish user identity and control access to web resources.",
+    "summary": "The HTTP Authentication working group was established to formalize and extend the basic authentication schemes originally defined in early HTTP specifications, addressing critical security gaps as web applications became more sophisticated. The group has evolved HTTP authentication from simple credential-passing mechanisms to comprehensive frameworks supporting multiple authentication schemes, including Digest Authentication, Bearer tokens, and newer challenge-response protocols. Key milestones include the development of the HTTP Authentication Framework (RFC 7235) which unified scattered specifications, and subsequent RFCs addressing issues like digest algorithm negotiation, mutual authentication, and security properties. Today, the working group maintains the core authentication standards that underpin modern web security practices, ensuring compatibility across diverse client and server implementations while remaining responsive to emerging threats and cryptographic advances.",
+    "rfcCount": 7,
+    "keyRfcs": []
+  },
+  {
+    "slug": "appsawg",
+    "name": "APPSAWG",
+    "fullName": "Applications Area Working Group",
+    "area": "applications",
+    "description": "Standardizes application-layer protocols and technologies that enable interoperability across diverse internet services and platforms.",
+    "summary": "The Applications Area Working Group (APPSAWG) was established to coordinate and advance standards for internet applications beyond basic email and web protocols. Emerging in the late 1990s and early 2000s, it addressed fragmentation in application-layer specifications by providing a common forum for standardizing protocols in areas such as calendaring, instant messaging, presence information, and multimedia transport. The working group tackled critical problems of protocol incompatibility between vendors and the need for robust, well-tested application standards as internet usage expanded beyond traditional use cases. Through its 35 RFCs, APPSAWG has produced foundational specifications including iCalendar, SIP (Session Initiation Protocol), and XMPP-related standards, while continuing to evolve standards for modern challenges like real-time communications and data synchronization across distributed systems.",
+    "rfcCount": 35,
+    "keyRfcs": []
+  },
+  {
+    "slug": "dispatch",
+    "name": "DISPATCH",
+    "fullName": "Dispatch",
+    "area": "applications",
+    "description": "Provides guidance and coordination for standards development in the IETF applications area by reviewing proposed work, identifying overlaps between working groups, and determining appropriate standardization paths for new technologies.",
+    "summary": "The DISPATCH working group was established to serve as a focal point for reviewing and triaging new work proposals within the IETF applications area, addressing the challenge of determining where new protocols and extensions should be standardized as the number of potential areas grew. It acts as a gatekeeper and matchmaker, evaluating whether proposed work fits existing working groups, requires a new group, should be handled as an area directorate item, or might be better suited for a different standards body. By systematizing the review of applications-area work and preventing duplication or misalignment of effort, DISPATCH has helped maintain coherent standards development despite the expanding scope and complexity of internet applications. The group continues to serve as an important coordination mechanism, ensuring that new protocols and extensions are channeled through appropriate standardization processes.",
+    "rfcCount": 1,
+    "keyRfcs": []
+  },
+  {
+    "slug": "core",
+    "name": "CoRE",
+    "fullName": "Constrained RESTful Environments",
+    "area": "applications",
+    "description": "Standardizes protocols and mechanisms for enabling RESTful communication in resource-constrained devices and networks, such as IoT sensors and embedded systems with limited memory, processing power, and bandwidth.",
+    "summary": "The CoRE working group was established in the late 2000s to address the challenge of applying web-based architectural principles to devices that could not support conventional HTTP due to their severe computational and energy constraints. The group developed the Constrained Application Protocol (CoAP) as a lightweight alternative to HTTP, along with supporting specifications for resource discovery, multicast messaging, and object models, enabling IoT devices to participate in web-like interactions. Key milestones include the publication of CoAP (RFC 7252) in 2014 and subsequent extensions for security, proxying, and enhanced reliability. Today, CoRE specifications are widely deployed in smart home, industrial IoT, and cellular IoT environments, with the working group continuing to evolve standards for emerging use cases such as congestion control, OSCORE security, and resource-oriented pub-sub communication.",
+    "rfcCount": 28,
+    "keyRfcs": []
+  },
+  {
+    "slug": "xmpp",
+    "name": "XMPP",
+    "fullName": "Extensible Messaging and Presence Protocol",
+    "area": "applications",
+    "description": "Standardizes the Extensible Messaging and Presence Protocol (XMPP), an open XML-based protocol for real-time communication including instant messaging, presence information, and multi-party chat.",
+    "summary": "The XMPP working group was established to formalize and standardize the Jabber protocol, which emerged in the late 1990s as a decentralized alternative to proprietary instant messaging systems. The group addressed critical gaps in interoperability and security by developing core specifications for client-to-server and server-to-server communications, establishing XMPP as an IETF standard that enabled federation across independent messaging networks. Key milestones include the publication of RFC 3920 and RFC 3921 (later modernized as RFC 6120 and RFC 6121) which defined the protocol fundamentals, along with numerous extension RFCs (XEPs) addressing specialized use cases from multi-user chat to Internet of Things applications. Today, XMPP remains widely deployed in enterprise messaging, gaming, and IoT systems, with the working group continuing to maintain and evolve the protocol to meet contemporary security and performance requirements.",
+    "rfcCount": 11,
+    "keyRfcs": []
+  },
+  {
+    "slug": "calext",
+    "name": "CALEXT",
+    "fullName": "Calendaring Extensions",
+    "area": "applications",
+    "description": "Standardizes extensions and improvements to internet calendaring and scheduling protocols, building upon the foundational iCalendar (RFC 5545) and CalDAV (RFC 4791) specifications.",
+    "summary": "The CALEXT working group was established to address limitations and evolving requirements in internet-based calendar systems that emerged after the initial standardization of iCalendar and CalDAV. As organizations increasingly relied on distributed scheduling and calendar interoperability across different platforms and vendors, the group identified gaps in handling complex scheduling scenarios, resource management, and modern use cases like task management and conference planning. Through its 11 RFCs, CALEXT has delivered critical enhancements including improved recurring event handling (RFC 7953), structured properties for better data representation, and extensions for scheduling with resources and participants. The group continues to evolve calendaring standards to meet contemporary demands for more sophisticated calendar applications while maintaining backward compatibility with existing implementations.",
+    "rfcCount": 11,
+    "keyRfcs": []
+  },
+  {
+    "slug": "extra",
+    "name": "EXTRA",
+    "fullName": "Email mailstore and eXtensions To Revise or Amend",
+    "area": "applications",
+    "description": "Standardizes and extends protocols for email message storage, retrieval, and management to address limitations in existing email access mechanisms.",
+    "summary": "The EXTRA working group was established to modernize email infrastructure by developing improved standards for mailbox access and management beyond the limitations of IMAP, which had become the de facto standard for remote mailbox access since the 1980s. Recognizing that IMAP's design reflected older network constraints and usage patterns, EXTRA has produced RFCs addressing critical gaps in email storage, including better support for message metadata, efficient synchronization, mailbox management, and client-server interactions. Key milestones include specifications for JMAP (JSON Meta Application Protocol) as a more efficient alternative to IMAP/SMTP for mail access, alongside extensions for improved annotation, event notification, and mobile-friendly protocols. The working group continues to evolve email standards to meet contemporary demands for performance, security, and functionality across diverse client implementations and deployment scenarios.",
+    "rfcCount": 22,
+    "keyRfcs": []
+  },
+  {
+    "slug": "dnsop",
+    "name": "DNSOP",
+    "fullName": "DNS Operations",
+    "area": "internet",
+    "description": "Standardizes operational practices, security mechanisms, and protocol extensions for the Domain Name System (DNS) to ensure reliable, secure, and efficient domain name resolution at global scale.",
+    "summary": "The DNSOP working group was established to address the operational challenges and security vulnerabilities that emerged as DNS became critical internet infrastructure supporting billions of daily queries. Originally focused on documenting best practices for DNS administrators and operators, the group evolved to standardize DNSSEC implementation details, address DNS amplification attacks, and develop mechanisms for managing large zone files and query loads. Key milestones include standardization of DNSSEC validation practices, DNS query name minimization to enhance privacy, and guidance on DNS flag day events for protocol modernization. Today, DNSOP continues to enhance DNS resilience and security by producing standards for operational concerns such as zone transfer optimization, anycast deployment, response rate limiting, and accommodating modern protocol variants like DNS-over-HTTPS.",
+    "rfcCount": 90,
+    "keyRfcs": []
+  },
+  {
+    "slug": "dhc",
+    "name": "DHC",
+    "fullName": "Dynamic Host Configuration",
+    "area": "internet",
+    "description": "Standardizes and maintains protocols for automatic assignment of network configuration parameters to hosts on IP networks.",
+    "summary": "The DHC working group was established to address the challenge of manually configuring network settings on every device in growing corporate and campus networks, which became increasingly impractical as network sizes expanded. The group produced DHCP (Dynamic Host Configuration Protocol), first standardized in RFC 2131 (1997), which revolutionized network administration by enabling automatic, dynamic assignment of IP addresses and related configuration data. Key milestones include the transition from BOOTP to DHCP, extensions for IPv6 (DHCPv6), security enhancements, and refinements for modern use cases like mobile devices and cloud infrastructure. Today, with 107 published RFCs, the working group continues maintaining and extending DHCP standards to address emerging network architectures, mobile environments, and interoperability challenges while ensuring backward compatibility with billions of deployed devices.",
+    "rfcCount": 107,
+    "keyRfcs": []
+  },
+  {
+    "slug": "6man",
+    "name": "6MAN",
+    "fullName": "IPv6 Maintenance",
+    "area": "internet",
+    "description": "Maintains and evolves the IPv6 protocol standards to ensure the continued functionality, security, and interoperability of IPv6 as the internet's primary network layer protocol.",
+    "summary": "The IPv6 Maintenance (6MAN) working group was established to provide ongoing stewardship of IPv6 specifications after the protocol's initial standardization, addressing emerging deployment challenges and protocol gaps discovered through real-world implementation. Originally created to handle technical corrections and clarifications to core IPv6 RFCs, the group has evolved to tackle critical issues including address architecture refinements, transition mechanisms, and security considerations that were not fully anticipated during IPv6's initial design. Key milestones include the publication of comprehensive updates to IPv6 addressing standards, the formalization of IPv6 Node Requirements, and numerous errata corrections that improved protocol clarity and implementer interoperability. Today, 6MAN continues to standardize essential aspects of IPv6 operation—from neighbor discovery and stateless address configuration to IPv6 extension headers and deployment best practices—ensuring that IPv6 remains robust and relevant as the internet's core transport protocol.",
+    "rfcCount": 63,
+    "keyRfcs": []
+  },
+  {
+    "slug": "v6ops",
+    "name": "V6OPS",
+    "fullName": "IPv6 Operations",
+    "area": "internet",
+    "description": "Addresses operational challenges and best practices for deploying IPv6 in production networks, focusing on interoperability, troubleshooting, and transition mechanisms.",
+    "summary": "The IPv6 Operations working group was established to bridge the gap between IPv6 protocol standards and real-world deployment challenges that organizations face when transitioning from IPv4. Recognizing that technical specifications alone were insufficient for large-scale IPv6 adoption, the group documented operational experiences, diagnostic tools, and deployment architectures through its 89 RFCs. Key milestones include standardizing transition mechanisms like dual-stack configurations, NAT64/DNS64, and 6to4 tunneling, as well as publishing guidance on IPv6 address planning, renumbering procedures, and router advertisement behavior. Today, the working group continues to refine operational practices as IPv6 deployment matures globally, addressing emerging concerns such as DNS64 interactions, source address selection, and enterprise network integration.",
+    "rfcCount": 89,
+    "keyRfcs": []
+  },
+  {
+    "slug": "intarea",
+    "name": "INTAREA",
+    "fullName": "Internet Area",
+    "area": "internet",
+    "description": "Standardizes fundamental internet protocols and addressing mechanisms that enable end-to-end communication across diverse network architectures and devices.",
+    "summary": "The INTAREA working group was established to maintain and evolve core internet protocols that form the foundation of global connectivity. Emerging from the need to address limitations in early internet infrastructure, the group tackled critical challenges including IP address exhaustion, routing scalability, and the transition between IPv4 and IPv6. Key milestones include the development of IPv6 transition mechanisms, improved address management protocols, and enhancements to core routing and naming infrastructure. Today, with 15 RFCs to its credit, INTAREA continues to refine internet fundamentals while addressing modern challenges such as mobility support, multi-homing, and efficient packet processing in an increasingly complex network ecosystem.",
+    "rfcCount": 15,
+    "keyRfcs": []
+  },
+  {
+    "slug": "pcp",
+    "name": "PCP",
+    "fullName": "Port Control Protocol",
+    "area": "internet",
+    "description": "Standardizes mechanisms for applications and devices to dynamically control how Network Address Translators (NATs) and firewalls forward incoming traffic to internal hosts.",
+    "summary": "The Port Control Protocol (PCP) working group was established to address a critical problem in modern IPv4 and IPv6 networks: applications and home devices lacked a standardized way to communicate with NATs and firewalls to request port mappings and firewall rules. Before PCP, applications relied on proprietary protocols like Universal Plug and Play (UPnP) or manual configuration, which limited interoperability and created security concerns. The working group developed RFC 6887, the core PCP specification, along with extensions for IPv6 prefix delegation, third-party authorization, and integration with other protocols. PCP enables secure, standardized communication between clients and network devices, improving connectivity for peer-to-peer applications, gaming, VoIP, and other services that require predictable external port access while maintaining NAT and firewall protections.",
+    "rfcCount": 11,
+    "keyRfcs": []
+  },
+  {
+    "slug": "idr",
+    "name": "IDR",
+    "fullName": "Inter-Domain Routing (BGP)",
+    "area": "routing",
+    "description": "Standardizes and maintains the Border Gateway Protocol (BGP) and related inter-domain routing technologies that enable autonomous systems to exchange routing information across the Internet.",
+    "summary": "The IDR working group was established to develop standards for routing between independent networks (autonomous systems) as the Internet transitioned from a single backbone architecture to a decentralized, multi-provider ecosystem. BGP, first standardized in the early 1990s, became the de facto standard for Internet backbone routing by solving the critical problem of how organizations with different routing policies could interoperate globally. Over three decades and 116 RFCs, the group has evolved BGP through multiple versions (BGPv4 in RFC 4271 being the current standard) while addressing emerging challenges including route security, operational scalability, and support for new address families and network services. Today, IDR continues to enhance BGP with features like improved convergence mechanisms, RPKI-based route origin validation, and support for modern applications while maintaining the protocol's fundamental role as the Internet's primary inter-domain routing protocol.",
+    "rfcCount": 116,
+    "keyRfcs": []
+  },
+  {
+    "slug": "ospf",
+    "name": "OSPF",
+    "fullName": "Open Shortest Path First",
+    "area": "routing",
+    "description": "Standardizes and maintains OSPF, an interior gateway protocol that enables routers to dynamically compute shortest-path routes through IP networks using link-state algorithms.",
+    "summary": "The OSPF working group was established to address limitations in earlier distance-vector routing protocols like RIP, which suffered from slow convergence times and poor scalability in large networks. OSPF introduced link-state routing technology to the IETF standards, allowing routers to maintain detailed topology maps and calculate optimal paths more efficiently, particularly for enterprise and service provider networks. Key milestones include the publication of OSPFv2 (RFC 2328) for IPv4 networks and OSPFv3 (RFC 5340) for IPv6, along with numerous extensions supporting traffic engineering, multicast routing, and graceful restart capabilities. Today, the working group continues to evolve OSPF through incremental improvements and new extensions, maintaining one of the most widely deployed Interior Gateway Protocols in production networks globally.",
+    "rfcCount": 70,
+    "keyRfcs": []
+  },
+  {
+    "slug": "isis",
+    "name": "ISIS",
+    "fullName": "IS-IS for IP Internets",
+    "area": "routing",
+    "description": "Develops and maintains protocol specifications for IS-IS (Intermediate System to Intermediate System), an interior gateway protocol used for routing IP traffic within large networks and internet service provider backbones.",
+    "summary": "The IS-IS working group was established to adapt the OSI routing protocol IS-IS for use in IP networks, addressing the need for a scalable, efficient routing protocol that could handle the growing complexity of large-scale internet infrastructure. Originally developed in the 1980s for OSI networks, IS-IS was extended to support IP routing and offered advantages such as excellent scalability, fast convergence, and support for hierarchical network designs through a two-level area structure. Over its history, the group has produced 55 RFCs that standardize core protocol mechanics, extensions for traffic engineering, MPLS support, and modern operational requirements. Today, IS-IS remains a critical routing protocol deployed by major service providers and continues to evolve to meet emerging networking challenges including segment routing, IPv6 integration, and enhanced security mechanisms.",
+    "rfcCount": 55,
+    "keyRfcs": []
+  },
+  {
+    "slug": "mpls",
+    "name": "MPLS",
+    "fullName": "Multiprotocol Label Switching",
+    "area": "routing",
+    "description": "Standardizes Multiprotocol Label Switching (MPLS), a forwarding mechanism that uses short, fixed-length labels to direct packets through networks instead of traditional IP address lookups.",
+    "summary": "The MPLS working group was established in the late 1990s to address scalability and performance limitations of traditional IP routing by introducing a more efficient label-based forwarding paradigm. MPLS enabled traffic engineering, Quality of Service (QoS) guarantees, and Virtual Private Network (VPN) services by allowing operators to create explicit paths through their networks and treat packets based on labels rather than destination addresses alone. Key milestones include the standardization of core MPLS forwarding mechanisms (RFC 3031), Label Distribution Protocol (RFC 5036), and extensions for Traffic Engineering and MPLS-based VPNs that became foundational to modern carrier networks. Today, with 195 RFCs published, the working group continues to maintain and extend MPLS standards for segment routing, segment routing traffic engineering, and integration with modern network architectures, ensuring MPLS remains relevant for both legacy deployments and emerging use cases.",
+    "rfcCount": 195,
+    "keyRfcs": []
+  },
+  {
+    "slug": "bfd",
+    "name": "BFD",
+    "fullName": "Bidirectional Forwarding Detection",
+    "area": "routing",
+    "description": "Standardizes rapid failure detection mechanisms for routing protocols and network services to enable fast convergence and improved network resilience.",
+    "summary": "The BFD working group was established to address a critical gap in network operations: the inability to quickly detect link and node failures across diverse network topologies and routing protocols. Before BFD, failure detection relied on slow hello mechanisms specific to each protocol, sometimes taking seconds or minutes to identify broken paths. The working group developed Bidirectional Forwarding Detection as a lightweight, protocol-independent failure detection framework that operates at sub-second timescales, enabling rapid network reconvergence. Since its inception, BFD has become foundational to modern network reliability, with its 21 RFCs covering core specifications, protocol extensions (for MPLS, IPv6, VLAN tunnels), and deployment guidance that have made it a critical component in production networks worldwide.",
+    "rfcCount": 21,
+    "keyRfcs": []
+  },
+  {
+    "slug": "pim",
+    "name": "PIM",
+    "fullName": "Protocol Independent Multicast",
+    "area": "routing",
+    "description": "Standardizes protocol-independent multicast routing mechanisms that enable efficient one-to-many and many-to-many packet delivery across IP networks without depending on a specific unicast routing protocol.",
+    "summary": "The PIM working group was established to address the limitations of earlier multicast routing approaches that were tightly coupled to specific unicast protocols, creating interoperability challenges and limiting deployment flexibility. By developing protocol-independent solutions, PIM enabled multicast to scale across diverse network infrastructures and routing domains. Key milestones include the standardization of PIM Sparse Mode (PIM-SM) for wide-area networks and PIM Dense Mode (PIM-DM) for local domains, followed by extensions like Bidirectional PIM and Source-Specific Multicast (SSM) that improved efficiency and security. Today, PIM remains the dominant multicast routing standard, with the working group continuing to refine protocols, address operational challenges, and adapt to evolving network requirements including segment routing integration and improved interoperability mechanisms.",
+    "rfcCount": 43,
+    "keyRfcs": []
+  },
+  {
+    "slug": "netconf",
+    "name": "NETCONF",
+    "fullName": "Network Configuration Protocol",
+    "area": "ops-management",
+    "description": "Defines and maintains standards for network device configuration management through a protocol-independent framework that enables consistent, automated provisioning and monitoring across diverse network infrastructure.",
+    "summary": "The NETCONF working group was established to address the complexity and inconsistency of network device configuration management, which historically relied on ad-hoc, vendor-specific command-line interfaces and protocols. The group developed NETCONF (RFC 6241) as a standardized, XML-based protocol that uses SSH or other secure transport mechanisms to provide atomic, transactional configuration operations with rollback capabilities. Key milestones include the introduction of YANG (RFC 6020) as a data modeling language that describes the structure and constraints of configuration data, enabling greater interoperability and automation. The working group has continued to evolve the standards ecosystem with extensions for additional transport mechanisms, enhanced security models, and integration with broader network management frameworks, producing specifications that form the foundation of modern network automation and Software-Defined Networking (SDN) implementations.",
+    "rfcCount": 37,
+    "keyRfcs": []
+  },
+  {
+    "slug": "opsec",
+    "name": "OPSEC",
+    "fullName": "Operational Security Capabilities for IP",
+    "area": "ops-management",
+    "description": "Develops operational security practices and standardized capabilities for securing IP networks and infrastructure against threats and vulnerabilities.",
+    "summary": "The OPSEC working group was established to address the growing need for systematic approaches to identifying and mitigating security risks in IP network operations, moving beyond purely technical controls to encompass operational procedures and awareness. Recognizing that many security breaches resulted from operational oversights rather than protocol flaws, the group focused on creating practical guidance and standards for network operators to assess vulnerabilities, implement security measures, and respond to threats. Key contributions include frameworks for network reconnaissance defense, routing security practices, and operational incident handling procedures that have become foundational to modern network security management. Today, with 18 RFCs published, OPSEC continues to evolve guidance addressing contemporary challenges such as DDoS mitigation, BGP security, and operational awareness in increasingly complex network environments.",
+    "rfcCount": 18,
+    "keyRfcs": []
+  },
+  {
+    "slug": "bmwg",
+    "name": "BMWG",
+    "fullName": "Benchmarking Methodology",
+    "area": "ops-management",
+    "description": "Establishes standardized methodologies and metrics for benchmarking network devices, applications, and services to enable fair, repeatable, and comparable performance measurements across vendors and implementations.",
+    "summary": "The BMWG was created in the 1990s to address the lack of standardized testing procedures for network equipment, which allowed vendors to publish conflicting or non-comparable performance claims. The group developed rigorous frameworks for measuring throughput, latency, loss, and other critical performance characteristics under controlled conditions, producing foundational RFCs like RFC 2544 that became industry standards for device testing. Over its 25+ year history, BMWG has adapted its methodologies to address emerging technologies including virtualized network functions, software-defined networking, application-level performance, and cloud services. Today, with 47 published RFCs, the working group continues to refine benchmarking practices for modern infrastructure while maintaining the scientific rigor needed for meaningful performance comparisons.",
+    "rfcCount": 47,
+    "keyRfcs": []
+  },
+  {
+    "slug": "mboned",
+    "name": "MBONED",
+    "fullName": "MBONE Deployment",
+    "area": "ops-management",
+    "description": "Develops and maintains standards for the deployment, operation, and management of IP multicast infrastructure and services across the global Internet.",
+    "summary": "The MBONED working group was established in the mid-1990s to address the practical challenges of deploying IP multicast (MBONE) as Internet backbone multicast routing evolved from experimental to operational status. Initially focused on solving interoperability issues between different multicast routing protocols and administrative domains, the group shifted toward operational best practices and management standards as multicast became integrated into ISP networks. Key milestones include standardizing multicast address allocation procedures, defining operational requirements for multicast-capable networks, and publishing guidelines for monitoring and troubleshooting multicast deployments. Today, the group continues to refine protocols and practices for multicast interdomain routing, address management, and operational metrics while adapting to modern network environments including cloud services and content distribution.",
+    "rfcCount": 29,
+    "keyRfcs": []
+  }
+]
