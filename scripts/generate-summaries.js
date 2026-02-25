@@ -198,7 +198,7 @@ async function main() {
 
   let rfcsToProcess = rfcs.filter(rfc => {
     if (targetWg && rfc.wg !== targetWg) return false;
-    if (rfc.wg === 'other') return false; // skip un-categorized
+
     return !rfc.summary || rfc.summary.length < 10;
   });
 

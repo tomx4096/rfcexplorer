@@ -7,8 +7,8 @@
     "icon": "🔐",
     "color": "from-red-900 to-red-700",
     "funFact": "The TLS handshake that secures your browser happens in under 100ms, yet involves cryptographic operations that would take the world's fastest supercomputers centuries to break.",
-    "wgCount": 8,
-    "rfcCount": 263
+    "wgCount": 29,
+    "rfcCount": 686
   },
   {
     "slug": "transport",
@@ -18,19 +18,19 @@
     "icon": "🚚",
     "color": "from-blue-900 to-blue-700",
     "funFact": "TCP was designed in 1973 and the core protocol (RFC 793) remained unchanged for 35 years before QUIC reimagined transport from the ground up.",
-    "wgCount": 5,
-    "rfcCount": 230
+    "wgCount": 19,
+    "rfcCount": 674
   },
   {
     "slug": "applications",
-    "name": "Applications & Real-Time",
+    "name": "Applications",
     "tagline": "The protocols users actually interact with",
-    "description": "Application-layer protocols: HTTP, email, multimedia streaming, and real-time communication that power the visible web.",
+    "description": "Application-layer protocols: HTTP, printing, directories, content delivery, and the standards that power the visible web.",
     "icon": "🌐",
     "color": "from-emerald-900 to-emerald-700",
     "funFact": "HTTP/1.1 (RFC 2616, 1999) was so dominant it took 16 years to supersede it with HTTP/2. HTTP/3 then arrived in just 5 years, riding on QUIC.",
-    "wgCount": 8,
-    "rfcCount": 169
+    "wgCount": 20,
+    "rfcCount": 351
   },
   {
     "slug": "internet",
@@ -40,8 +40,8 @@
     "icon": "🕸️",
     "color": "from-purple-900 to-purple-700",
     "funFact": "IPv4 was designed for 4.3 billion addresses — the IETF assumed the internet would never need more. IPv6 provides 340 undecillion addresses (3.4×10³⁸).",
-    "wgCount": 6,
-    "rfcCount": 375
+    "wgCount": 15,
+    "rfcCount": 658
   },
   {
     "slug": "routing",
@@ -51,8 +51,8 @@
     "icon": "🗺️",
     "color": "from-amber-900 to-amber-700",
     "funFact": "BGP (RFC 4271) is sometimes called 'the duct tape of the internet.' It was originally sketched on napkins at an IETF meeting in 1989.",
-    "wgCount": 6,
-    "rfcCount": 500
+    "wgCount": 17,
+    "rfcCount": 970
   },
   {
     "slug": "ops-management",
@@ -62,7 +62,73 @@
     "icon": "⚙️",
     "color": "from-slate-800 to-slate-600",
     "funFact": "SNMP (Simple Network Management Protocol) was published in 1988 and is still running on millions of network devices today, despite being designed for a much simpler era.",
-    "wgCount": 4,
-    "rfcCount": 131
+    "wgCount": 16,
+    "rfcCount": 428
+  },
+  {
+    "slug": "multimedia",
+    "name": "Multimedia & Voice",
+    "tagline": "Voice, video, and real-time communication",
+    "description": "Session initiation, audio/video transport, WebRTC, location, and the protocols that power internet telephony and real-time media.",
+    "icon": "📞",
+    "color": "from-cyan-900 to-cyan-700",
+    "funFact": "SIP (RFC 3261) was originally designed to set up phone calls over IP, but today powers everything from WhatsApp calls to Zoom meetings to 911 emergency services.",
+    "wgCount": 21,
+    "rfcCount": 517
+  },
+  {
+    "slug": "email",
+    "name": "Email & Messaging",
+    "tagline": "The original internet application",
+    "description": "SMTP, IMAP, MIME, message filtering, and the standards that have carried electronic mail for over 50 years — plus IRC and instant messaging protocols.",
+    "icon": "✉️",
+    "color": "from-yellow-900 to-yellow-700",
+    "funFact": "Email predates the internet itself. The first email was sent in 1971, SMTP (RFC 821) was standardized in 1982, and RFC 822 defined the \"From:\" and \"To:\" headers still used today.",
+    "wgCount": 10,
+    "rfcCount": 125
+  },
+  {
+    "slug": "network-services",
+    "name": "Network Services",
+    "tagline": "VPNs, tunneling, and carrier infrastructure",
+    "description": "Layer 2 and Layer 3 VPNs, pseudowires, network virtualization, and the tunneling technologies that power enterprise and carrier networks.",
+    "icon": "🔀",
+    "color": "from-orange-900 to-orange-700",
+    "funFact": "MPLS L3VPNs (RFC 4364) are used by virtually every major ISP to provide private corporate network services. Your company's \"private\" WAN almost certainly runs over shared MPLS infrastructure.",
+    "wgCount": 8,
+    "rfcCount": 216
+  },
+  {
+    "slug": "wireless",
+    "name": "Wireless & Mobile",
+    "tagline": "Keeping connected on the move",
+    "description": "Mobile IP, handover optimization, mesh networking, and low-power IoT protocols that enable IP connectivity across wireless and mobile networks.",
+    "icon": "📡",
+    "color": "from-teal-900 to-teal-700",
+    "funFact": "Mobile IPv6 (RFC 6275) lets your phone keep the same IP address while moving between networks — the same principle that allows seamless handoff between cell towers.",
+    "wgCount": 7,
+    "rfcCount": 139
+  },
+  {
+    "slug": "historical",
+    "name": "Origins",
+    "tagline": "The documents that started it all",
+    "description": "The earliest RFCs from the ARPANET era — before the IETF, before the web, when a small group of researchers were inventing the internet from scratch.",
+    "icon": "📜",
+    "color": "from-stone-800 to-stone-600",
+    "funFact": "RFC 1 was written by Steve Crocker on April 7, 1969 — he was a 24-year-old UCLA grad student. He invented the RFC format itself as an informal way to share ideas, never imagining it would still be in use 55 years later.",
+    "wgCount": 1,
+    "rfcCount": 1064
+  },
+  {
+    "slug": "independent",
+    "name": "Independent & Experimental",
+    "tagline": "Outside the working group system",
+    "description": "RFCs published as individual submissions, experimental proposals, and informational documents outside the formal IETF working group process — including some famous April Fool's jokes.",
+    "icon": "🔬",
+    "color": "from-neutral-800 to-neutral-600",
+    "funFact": "RFC 1149 (IP over Avian Carriers — carrier pigeons) was an April Fool's RFC from 1990. It was actually implemented in Bergen, Norway in 2001, achieving a packet loss rate of 55% and a ping time of 3000 seconds.",
+    "wgCount": 5,
+    "rfcCount": 3889
   }
 ]
